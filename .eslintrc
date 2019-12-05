@@ -1,0 +1,268 @@
+---
+root: true
+settings:
+  react:
+    version: detect
+  import/core-modules:
+    - react-test-renderer
+parser: '@typescript-eslint/parser'
+plugins:
+  - react
+  - '@typescript-eslint'
+extends:
+  - airbnb
+  - plugin:@typescript-eslint/recommended
+env:
+  browser: true
+  node: true
+  jest: true
+parserOptions:
+  ecmaVersion: 2018
+  ecmaFeatures:
+    jsx: true
+    modules: true
+rules:
+  # Overriding defaults
+  '@typescript-eslint/indent':
+    - error
+    - 2
+  # From the Mobile Team
+  arrow-body-style: off
+  object-shorthand: off
+  padded-blocks: off
+  prefer-arrow-callback: off
+  react/jsx-no-bind:
+    - error
+    - ignoreRefs: false
+      allowArrowFunctions: true
+      allowBind: false
+  react/prefer-es6-class: warn
+  react/prefer-stateless-function: off
+  ####
+  strict:
+    - error
+    - never
+  # ES6
+  no-var: error
+  prefer-const: error
+  # Variables
+  no-shadow: error
+  no-shadow-restricted-names: error
+  no-unused-vars:
+    - error
+    - vars: all
+      args: none
+  no-use-before-define: off
+  # Possible errors
+  class-methods-use-this:
+    - error
+    - exceptMethods:
+        - render
+        - getInitialState
+        - getDefaultProps
+        - getChildContext
+        - componentWillMount
+        - componentDidMount
+        - componentWillReceiveProps
+        - shouldComponentUpdate
+        - componentWillUpdate
+        - componentDidUpdate
+        - componentWillUnmount
+        - componentDidCatch
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: always-multiline
+  no-cond-assign:
+    - error
+    - always
+  no-console:
+    - error
+    - allow:
+        - info
+        - debug
+        - warn
+        - error
+        - tron
+  no-debugger: warn
+  no-alert: warn
+  no-constant-condition: warn
+  no-dupe-keys: error
+  no-duplicate-case: error
+  no-empty: error
+  no-ex-assign: error
+  no-extra-boolean-cast: off
+  no-extra-semi: error
+  no-func-assign: error
+  no-inner-declarations: error
+  no-invalid-regexp: error
+  no-irregular-whitespace: error
+  no-obj-calls: error
+  no-sparse-arrays: error
+  no-unreachable: error
+  use-isnan: error
+  block-scoped-var: off
+  # Best practices
+  consistent-return: off
+  curly:
+    - error
+    - multi-line
+  default-case: error
+  dot-notation:
+    - error
+    - allowKeywords: true
+  eqeqeq: error
+  guard-for-in: off
+  no-caller: error
+  no-else-return: off
+  no-eq-null: error
+  no-eval: error
+  no-extend-native: error
+  no-extra-bind: error
+  no-floating-decimal: error
+  no-implied-eval: error
+  no-lone-blocks: error
+  no-loop-func: error
+  no-multi-str: error
+  no-native-reassign: error
+  no-new: error
+  no-new-func: error
+  no-new-wrappers: error
+  no-octal: error
+  no-octal-escape: error
+  no-param-reassign:
+    - error
+    - props: false
+  no-proto: error
+  no-plusplus: off
+  no-redeclare: error
+  no-return-assign: off
+  no-script-url: error
+  no-self-compare: error
+  no-sequences: error
+  no-throw-literal: error
+  no-with: error
+  radix: error
+  vars-on-top: off
+  wrap-iife:
+    - error
+    - any
+  yoda: error
+  # Prettier compatibility
+  quotes:
+    - 2
+    - single
+    - avoidEscape: true
+  arrow-parens: off
+  brace-style: off
+  one-var-declaration-per-line: off
+  no-confusing-arrow: off
+  # JSX Style
+  react/display-name: off
+  react/jsx-boolean-value: off
+  jsx-quotes:
+    - error
+    - prefer-double
+  react/jsx-curly-spacing:
+    - error
+    - never
+  react/jsx-no-undef: error
+  react/jsx-sort-props: off
+  react/jsx-sort-prop-types: off
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  react/no-did-mount-set-state: error
+  react/no-did-update-set-state: error
+  react/no-multi-comp: error
+  react/no-unknown-property: error
+  react/prop-types: off
+  react/react-in-jsx-scope: error
+  react/self-closing-comp: error
+  react/jsx-wrap-multilines:
+    - error
+    - declaration: parens-new-line
+      assignment: parens-new-line
+      return: parens-new-line
+      arrow: parens-new-line
+      condition: parens-new-line
+      logical: parens-new-line
+      prop: ignore
+  react/jsx-no-duplicate-props:
+    - error
+    - ignoreCase: false
+  jsx-a11y/click-events-have-key-events: warn
+  jsx-a11y/label-has-for: off
+  jsx-a11y/label-has-associated-control: warn
+  jsx-a11y/anchor-is-valid: warn
+  react/sort-comp:
+    - error
+    - order:
+        - displayName
+        - propTypes
+        - contextTypes
+        - childContextTypes
+        - mixins
+        - statics
+        - defaultProps
+        - /^_(?!(on|get|render))/
+        - constructor
+        - getDefaultProps
+        - getInitialState
+        - state
+        - getChildContext
+        - componentWillMount
+        - componentDidMount
+        - componentWillReceiveProps
+        - shouldComponentUpdate
+        - componentWillUpdate
+        - componentDidUpdate
+        - componentWillUnmount
+        - componentDidCatch
+        - /^_?on.+$/
+        - /^_?get.+$/
+        - /^_?render.+$/
+        - render
+  import/no-unresolved: off
+  import/extensions: off
+  object-curly-newline:
+    - error
+    - ImportDeclaration:
+        consistent: true
+  operator-linebreak:
+    - error
+    - after
+    - overrides:
+        '?': before
+        ':': before
+  implicit-arrow-linebreak: off
+  function-paren-newline: off
+  import/order:
+    - error
+    - groups:
+        - - builtin
+          - external
+        - internal
+        - - index
+          - sibling
+          - parent
+  import/prefer-default-export: off # Do not enforce default on single exporting modules
+  linebreak-style: off
+  react/jsx-filename-extension:
+    - warn
+    - extensions:
+        - .js
+        - .jsx # Allow JSX on .JS files
+  react/require-default-props: off #
+  react/no-unused-prop-types: off # Disabled due to false positives. Fixed in eslint-plugin-react v7.2.0.
+  react/no-unused-state: off # Disabled due to false positives. Fixed in eslint-plugin-react v7.11.1.
+  react/jsx-curly-brace-presence: off
+  react/destructuring-assignment: off
+  prefer-destructuring: off
+  react/button-has-type: off
+  lines-between-class-members:
+    - error
+    - always
+    - exceptAfterSingleLine: true
