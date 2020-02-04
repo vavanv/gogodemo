@@ -1,5 +1,5 @@
 export const API_URLS = {
-  stops: 'api/stop/list',
+  stops: 'api/cache/stop/list',
   shapes: 'api/shapes/list',
 };
 
