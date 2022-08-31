@@ -16,7 +16,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "history": "^4.10.1",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27",
+    "moment-timezone": "^0.5.35",
     "normalize.css": "^8.0.1",
     "ramda": "^0.26.1",
     "react": "^16.12.0",
